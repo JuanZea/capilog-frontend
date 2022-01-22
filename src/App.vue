@@ -1,8 +1,8 @@
 <template>
 	<div class="h-screen w-screen relative flex flex-col bg-gray-100 justify-center items-center text-8xl font-bold">
 		<div class="flex absolute top-4 right-4 justify-end gap-4 text-white">
-			<button class="button btn-primary">Login</button>
-			<button class="button btn-primary">Sign In</button>
+			<button class="button btn-primary">Iniciar Sesión</button>
+			<button class="button btn-primary">Registrarse</button>
 		</div>
 		<div>
 			<span class="text-gray-900">CAPI</span>

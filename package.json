@@ -1,26 +1,30 @@
 {
   "name": "capilog-frontend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuanZea/capilog-frontend.git"
-  },
-  "keywords": [],
   "contributors": [
     {
-      "name" : "Juan Zea",
-      "email" : "juan.zeaa@udea.edu.co",
-      "url" : "https://github.com/JuanZea"
+      "name": "Juan Zea",
+      "email": "juan.zeaa@udea.edu.co",
+      "url": "https://github.com/JuanZea"
+    },
+    {
+      "name": "Roy Maestre",
+      "email": "roy.maestre@udea.edu.co",
+      "url": "https://github.com/Royk8"
     }
   ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JuanZea/capilog-frontend/issues"
+  "dependencies": {
+    "vue": "^3.2.25"
   },
-  "homepage": "https://github.com/JuanZea/capilog-frontend#readme"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.29.8"
+  }
 }

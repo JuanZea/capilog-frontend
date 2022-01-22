@@ -6,6 +6,13 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
+  "contributors": [
+    {
+      "name": "Juan Zea",
+      "email": "juan.zeaa@udea.edu.co",
+      "url": "https://github.com/JuanZea"
+    }
+  ],
   "dependencies": {
     "vue": "^3.2.25"
   },

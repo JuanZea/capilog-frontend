@@ -1,0 +1,9 @@
+# VS Code
+.vscode
+
+# dependencies
+package.json
+package-lock.json
+
+# docs
+*.md

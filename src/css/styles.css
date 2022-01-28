@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .button {
-	@apply inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
+	@apply inline-flex items-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
 .btn-primary {
-	@apply bg-capi hover:bg-opacity-80 focus:ring-capi ring-offset-gray-100;
+	@apply bg-capi ring-offset-gray-100 hover:bg-opacity-80 focus:ring-capi;
 }
 
 .bg-scrap {

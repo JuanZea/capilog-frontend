@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Project initialization
+- Project initialized
 - Tailwind Css added
 - Editor config added
+- Welcome view added
+- Login view added
+- Vue router configured
 
 [Unreleased]: https://github.com/JuanZea/capilog-frontend

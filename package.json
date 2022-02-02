@@ -1,45 +1,26 @@
 {
   "name": "capilog-frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "npx prettier --write .",
-    "lint:check": "npx prettier --check ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanZea/capilog-frontend.git"
+  },
+  "keywords": [],
   "contributors": [
     {
-      "name": "Juan Zea",
-      "email": "juan.zeaa@udea.edu.co",
-      "url": "https://github.com/JuanZea"
-    },
-    {
-      "name": "Roy Maestre",
-      "email": "roy.maestre@udea.edu.co",
-      "url": "https://github.com/Royk8"
-    },
-    {
-      "name": "Jhonier Córdoba",
-      "email": "jhonier.cordoba@udea.edu.co",
-      "url": "https://github.com/JhonierCordoba"
+      "name" : "Juan Zea",
+      "email" : "juan.zeaa@udea.edu.co",
+      "url" : "https://github.com/JuanZea"
     }
   ],
-  "dependencies": {
-    "vue": "^3.2.25",
-    "vue-router": "^4.0.12"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanZea/capilog-frontend/issues"
   },
-  "devDependencies": {
-    "@heroicons/vue": "^1.0.5",
-    "@tailwindcss/forms": "^0.4.0",
-    "@vitejs/plugin-vue": "^2.0.0",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.5",
-    "prettier": "^2.5.1",
-    "prettier-plugin-tailwindcss": "^0.1.4",
-    "tailwindcss": "^3.0.15",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2",
-    "vue-tsc": "^0.29.8"
-  }
+  "homepage": "https://github.com/JuanZea/capilog-frontend#readme"
 }

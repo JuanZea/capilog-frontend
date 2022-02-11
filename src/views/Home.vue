@@ -1,9 +1,7 @@
 <template>
 	<AuthLayout>
-		<div class="flex h-full w-full p-8 bg-aztec">
-			<div class="bg-gray-200 w-full">
-				
-			</div>
+		<div class="bg-aztec flex h-full w-full p-8">
+			<div class="w-full bg-gray-200"></div>
 		</div>
 	</AuthLayout>
 </template>

@@ -6,6 +6,10 @@
 	@apply inline-flex items-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
+.sidebar-button {
+	@apply flex w-full items-center justify-center gap-4 whitespace-nowrap rounded-md px-3 py-4 text-2xl font-medium text-gray-300 hover:bg-gray-600 hover:text-white lg:justify-start lg:gap-2 lg:py-2 lg:text-lg;
+}
+
 .btn-primary {
 	@apply bg-capi ring-offset-gray-100 hover:bg-opacity-80 focus:ring-capi;
 }
@@ -16,5 +20,10 @@
 
 .bg-scrap {
 	background-color: #f3f4f6;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231eb858' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23374151' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.bg-aztec {
+	background-color: #e5e7eb;
+	background-image: url("data:image/svg+xml,%3Csvg width='32' height='64' viewBox='0 0 32 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 28h20V16h-4v8H4V4h28v28h-4V8H8v12h4v-8h12v20H0v-4zm12 8h20v4H16v24H0v-4h12V36zm16 12h-4v12h8v4H20V44h12v12h-4v-8zM0 36h8v20H0v-4h4V40H0v-4z' fill='%23374151' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
 }

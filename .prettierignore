@@ -7,3 +7,6 @@ package-lock.json
 
 # docs
 *.md
+
+# coverage
+coverage

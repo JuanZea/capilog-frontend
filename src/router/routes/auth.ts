@@ -1,3 +1,5 @@
+import admin from './admin';
+
 import Home from '../../views/Home.vue';
 import MyProfile from '../../views/MyProfile.vue';
 
@@ -12,4 +14,5 @@ export default [
 		path: '/my-profile',
 		component: MyProfile,
 	},
+	...admin,
 ];

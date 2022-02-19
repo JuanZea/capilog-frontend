@@ -1,7 +1,5 @@
 <template>
-	<div
-		class="flex h-20 w-20 items-center justify-center rounded-full bg-gray-700 text-3xl font-bold text-white shadow"
-	>
+	<div class="flex items-center justify-center rounded-full bg-gray-700 font-bold text-white shadow">
 		<span>{{ initials }}</span>
 	</div>
 </template>

@@ -3,7 +3,7 @@
 		<div class="bg-aztec flex h-full w-full p-8">
 			<div class="w-full bg-gray-200 p-8">
 				<h1 class="text mb-2 text-center font-semibold text-gray-400">Mi Perfil</h1>
-				<div class="mb-4 flex justify-center"><Avatar /></div>
+				<div class="mb-4 flex justify-center"><Avatar class="h-20 w-20 text-3xl" /></div>
 				<div class="flex justify-center">
 					<Fieldset label="Información">
 						<div class="flex gap-2">

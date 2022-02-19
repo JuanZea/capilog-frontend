@@ -1,5 +1,5 @@
 <template>
-	<div class="flex h-screen w-screen flex-col bg-gray-200 lg:flex-row">
+	<div class="flex h-full w-screen flex-col bg-gray-200 lg:h-screen lg:flex-row">
 		<button @click="open" class="flex h-7 justify-center bg-gray-700 p-2 lg:hidden">
 			<div class="absolute rounded-full border-2 border-white bg-gray-700">
 				<ArrowSmDownIcon class="h-7 w-7 text-white" />

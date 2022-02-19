@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import Topbar from '../Topbar.vue';
 import { currentModal, closeModal } from '../../ts/modals';
+
+import Topbar from '../Topbar.vue';
 export default {
 	components: { Topbar },
 	setup() {

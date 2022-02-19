@@ -6,5 +6,10 @@ describe('My profile test', () => {
 		render(MyProfile);
 
 		screen.getByText('Mi Perfil');
+		screen.getByText('Nombre');
+		screen.getByText('Información');
+		screen.getByText('Correo electrónico');
+		screen.getByText('Finca');
+		screen.getByText('Rol');
 	});
 });

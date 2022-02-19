@@ -1,4 +1,4 @@
-import { MODALS } from '../../src/ts/constants';
+import { MODALS } from '../../src/constants';
 import { currentModal, openModal, closeModal } from '../../src/ts/modals';
 
 describe('Modals test', () => {

@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import NavMenu from '../../components/NavMenu.vue';
-import CapilogTitle from '../../components/CapilogTitle.vue';
-import { MODALS } from '../../ts/constants';
+import { MODALS } from '../../constants';
 import { openModal } from '../../ts/modals';
 import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon } from '@heroicons/vue/outline';
+
+import NavMenu from '../../components/NavMenu.vue';
+import CapilogTitle from '../../components/CapilogTitle.vue';
 export default {
 	components: { CapilogTitle, NavMenu, TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon },
 	setup() {
 		const open = () => openModal(MODALS.TOPBAR);
-
 		return { open };
 	},
 };

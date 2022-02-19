@@ -1,4 +1,3 @@
-// import { mount } from '@vue/test-utils';
 import { render, screen } from '@testing-library/vue';
 import CapilogTitle from '../../src/components/CapilogTitle.vue';
 

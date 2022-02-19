@@ -2,7 +2,7 @@
 	<AuthLayout>
 		<div class="bg-aztec flex h-full w-full p-8">
 			<div class="w-full bg-gray-200">
-				<h1>Mi perfil</h1>
+				<h1>Mi Perfil</h1>
 			</div>
 		</div>
 	</AuthLayout>

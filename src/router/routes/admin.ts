@@ -1,15 +1,21 @@
-import UsersIdex from '../../views/admin/users/UserIndex.vue';
-import UserCreate from '../../views/admin/users/UserCreate.vue';
+import UsersIndex from '../../views/admin/users/UsersIndex.vue';
+import UsersCreate from '../../views/admin/users/UsersCreate.vue';
+import UsersShow from '../../views/admin/users/UsersShow.vue';
 
 export default [
 	{
-		name: 'admin.users',
+		name: 'admin.users.index',
 		path: '/admin/users',
-		component: UsersIdex,
+		component: UsersIndex,
 	},
 	{
 		name: 'admin.users.create',
 		path: '/admin/users/create',
-		component: UserCreate,
+		component: UsersCreate,
+	},
+	{
+		name: 'admin.users.show',
+		path: '/admin/users/:dni',
+		component: UsersShow,
 	},
 ];

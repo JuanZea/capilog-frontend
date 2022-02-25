@@ -22,7 +22,7 @@
 			</section>
 			<section class="text-white">
 				<h2 class="text-lg font-medium">Management</h2>
-				<router-link :to="{ name: 'admin.users' }" class="sidebar-button">
+				<router-link :to="{ name: 'admin.users.index' }" class="sidebar-button">
 					<UsersIcon class="h-9 w-9 text-white lg:h-7 lg:w-7" />
 					Administrar ususarios
 				</router-link>

@@ -44,9 +44,9 @@
 									</div>
 								</td>
 								<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-									<a href="#" class="flex justify-center text-gray-700 hover:text-gray-900"
+									<router-link :to="{ name: 'admin.users.show', params: {dni: user.dni} }" class="flex justify-center text-gray-700 hover:text-gray-900"
 										><EyeIcon class="h-6 w-6"
-									/></a>
+									/></router-link>
 								</td>
 								<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
 									<a href="#" class="flex justify-center text-indigo-700 hover:text-indigo-900"
@@ -54,9 +54,9 @@
 									/></a>
 								</td>
 								<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-									<a href="#" class="text-red-700 hover:text-red-900"
-										><TrashIcon class="h-6 w-6"
-									/></a>
+									<button @click="destroy(user.dni)" class="text-red-700 hover:text-red-900">
+										<TrashIcon class="h-6 w-6" />
+									</button>
 								</td>
 							</tr>
 						</tbody>
@@ -70,18 +70,26 @@
 <script>
 import Avatar from '../Avatar.vue';
 import { ref } from 'vue';
-import { getUsers } from '../../api/services';
+import { usersService } from '../../api/services';
 import { PencilAltIcon, TrashIcon, PlusCircleIcon, EyeIcon } from '@heroicons/vue/outline';
 
 export default {
 	components: { Avatar, PencilAltIcon, TrashIcon, PlusCircleIcon, EyeIcon },
 	setup() {
 		const users = ref(null);
-		getUsers().then((response) => {
-			users.value = response.users;
-		});
+		const getUsers = () => {
+			usersService.index().then((response) => {
+				users.value = response.users;
+			});
+		}
+			
+		getUsers();
 
-		return { users };
+		const destroy = (dni) => {
+			usersService.destroy(dni).then(getUsers);
+		};
+
+		return { users, destroy };
 	},
 };
 </script>

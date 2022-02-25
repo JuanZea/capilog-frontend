@@ -43,6 +43,7 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "@vue/vue3-jest": "^27.0.0-alpha.4",
     "autoprefixer": "^10.4.2",
+    "axios": "^0.26.0",
     "babel-jest": "^27.5.1",
     "jest": "^27.5.1",
     "postcss": "^8.4.5",

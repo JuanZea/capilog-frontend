@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import { state } from '../store';
 import { getNameInitials } from '../helpers';
 export default {
-	setup() {
-		return { initials: getNameInitials(state.user.name) };
+	props: { name: { type: String, required: true } },
+	setup(props) {
+		return { initials: getNameInitials(props.name) };
 	},
 };
 </script>

@@ -17,9 +17,9 @@
 </template>
 
 <script>
+import GuestLayout from './layouts/GuestLayout.vue';
 import CapilogTitle from '../components/CapilogTitle.vue';
 import { UserCircleIcon } from '@heroicons/vue/outline';
-import GuestLayout from './layouts/GuestLayout.vue';
 
 export default {
 	components: { CapilogTitle, UserCircleIcon, GuestLayout },

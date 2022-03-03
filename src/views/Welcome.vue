@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import GuestLayout from './layouts/GuestLayout.vue';
+import CapilogTitle from '../components/CapilogTitle.vue';
+import { UserCircleIcon } from '@heroicons/vue/outline';
+</script>
+
 <template>
 	<GuestLayout>
 		<div class="relative flex h-full w-full flex-col items-center justify-center">
@@ -15,13 +21,3 @@
 		</div>
 	</GuestLayout>
 </template>
-
-<script>
-import GuestLayout from './layouts/GuestLayout.vue';
-import CapilogTitle from '../components/CapilogTitle.vue';
-import { UserCircleIcon } from '@heroicons/vue/outline';
-
-export default {
-	components: { CapilogTitle, UserCircleIcon, GuestLayout },
-};
-</script>

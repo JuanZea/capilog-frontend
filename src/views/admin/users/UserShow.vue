@@ -58,11 +58,11 @@ export default {
 			usersService.show(route.params.dni).then((response) => {
 				user.value = response.user;
 			});
-		}
-			
+		};
+
 		getUser();
 
-		return {user}
-	}
+		return { user };
+	},
 };
 </script>

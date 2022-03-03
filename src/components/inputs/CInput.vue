@@ -4,6 +4,7 @@
 		<div>
 			<input
 				:id="id"
+				:name="id"
 				:type="type"
 				class="block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
 				:placeholder="placeholder"

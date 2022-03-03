@@ -21,10 +21,10 @@
 				</button>
 			</section>
 			<section class="text-white">
-				<h2 class="text-lg font-medium">Management</h2>
+				<h2 class="text-left text-lg font-medium opacity-80">Administración</h2>
 				<router-link :to="{ name: 'admin.users.index' }" class="sidebar-button">
 					<UsersIcon class="h-9 w-9 text-white lg:h-7 lg:w-7" />
-					Administrar ususarios
+					Usuarios
 				</router-link>
 			</section>
 		</div>
@@ -35,7 +35,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import CapilogTitle from './CapilogTitle.vue';
 import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon } from '@heroicons/vue/outline';
 import Fieldset from './Fieldset.vue';

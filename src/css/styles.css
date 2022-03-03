@@ -15,7 +15,7 @@
 }
 
 .sidebar-button {
-	@apply flex w-full items-center justify-center gap-4 whitespace-nowrap rounded-md px-3 py-4 text-2xl font-medium text-gray-300 hover:bg-gray-600 hover:text-white lg:justify-start lg:gap-2 lg:py-2 lg:text-lg;
+	@apply flex w-full items-center gap-4 whitespace-nowrap rounded-md px-3 py-4 text-2xl font-medium text-gray-300 hover:bg-gray-600 hover:text-white lg:justify-start lg:gap-2 lg:py-2 lg:text-lg;
 }
 
 .btn-primary {

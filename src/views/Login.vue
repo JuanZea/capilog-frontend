@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import GuestLayout from './layouts/GuestLayout.vue';
 import CInput from '../components/inputs/CInput.vue';
+import * as yupEs from '../lang/yupEs';
+import Alert from '../components/Alert.vue';
 import CapilogTitle from '../components/CapilogTitle.vue';
+import { ref } from 'vue';
+import { setLocale } from 'yup';
+import { object, string } from 'yup';
 import { useRouter } from 'vue-router';
+import { authService } from '../services';
 import { useForm, useField } from 'vee-validate';
 import { ArrowCircleLeftIcon } from '@heroicons/vue/outline';
-import { object, string } from 'yup';
-import { setLocale } from 'yup';
-import * as yupEs from '../lang/yupEs';
-import { authService } from '../services';
-import Alert from '../components/Alert.vue';
-import { computed, ref } from 'vue';
 
 setLocale(yupEs);
 
@@ -40,7 +40,6 @@ const invalidData = ref(false);
 const login = async (event: Event) => {
 	event.preventDefault();
 	if (!meta.value.valid) return;
-	console.log('enviado', values);
 
 	authService
 		.login(values)

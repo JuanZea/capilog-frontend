@@ -9,7 +9,7 @@ const route = useRoute();
 const user = ref(null);
 const getUser = () => {
 	userService.show(route.params.dni).then((response) => {
-		user.value = response.user;
+		user.value = response.data.data[0];
 	});
 };
 
@@ -18,7 +18,7 @@ getUser();
 
 <template>
 	<AuthLayout>
-		<div class="bg-aztec flex h-full w-full p-8">
+		<div class="bg-aztec flex w-full p-8">
 			<div class="w-full bg-gray-200 p-8">
 				<div class="mb-4 flex flex-col items-center justify-center gap-2">
 					<h1 class="text text-center font-semibold text-gray-400">USUARIO</h1>

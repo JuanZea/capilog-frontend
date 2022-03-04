@@ -1,5 +1,10 @@
+<script lang="ts" setup>
+import CapilogTitle from './CapilogTitle.vue';
+import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon } from '@heroicons/vue/outline';
+</script>
+
 <template>
-	<div class="flex h-full flex-col justify-between gap-10 bg-gray-700 py-4 px-8">
+	<div class="flex flex-col justify-between gap-10 bg-gray-700 py-4 px-8">
 		<div class="flex flex-col gap-4">
 			<section>
 				<router-link to="/home" class="mb-4 flex justify-center">
@@ -34,12 +39,3 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-import CapilogTitle from './CapilogTitle.vue';
-import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon } from '@heroicons/vue/outline';
-import Fieldset from './Fieldset.vue';
-export default {
-	components: { CapilogTitle, TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon, Fieldset },
-};
-</script>

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import AuthLayout from '../../layouts/AuthLayout.vue';
 import UsersTable from '../../../components/tables/users/UsersTable.vue';
-import { usersService } from '../../../api/services';
+import { userService } from '../../../services';
 import { ref } from 'vue';
 import Banner from '../../../components/Banner.vue';
 
 const users = ref(null);
 
-usersService.all().then((response) => {
+userService.all().then((response) => {
 	users.value = response.data.users;
 });
 </script>

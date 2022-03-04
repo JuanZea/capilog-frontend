@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import NavMenu from '../../components/NavMenu.vue';
+import { MODALS } from '../../constants';
+import { openModal } from '../../ts/modals';
+import { ArrowSmDownIcon } from '@heroicons/vue/outline';
+const open = () => openModal(MODALS.TOPBAR);
+</script>
+
 <template>
 	<div class="flex h-screen w-screen flex-col bg-gray-200 lg:flex-row">
 		<button @click="open" class="flex h-7 justify-center bg-gray-700 p-2 lg:hidden">
@@ -11,19 +19,3 @@
 		</div>
 	</div>
 </template>
-
-<script>
-import { MODALS } from '../../constants';
-import { openModal } from '../../ts/modals';
-import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon } from '@heroicons/vue/outline';
-
-import NavMenu from '../../components/NavMenu.vue';
-import CapilogTitle from '../../components/CapilogTitle.vue';
-export default {
-	components: { CapilogTitle, NavMenu, TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon },
-	setup() {
-		const open = () => openModal(MODALS.TOPBAR);
-		return { open };
-	},
-};
-</script>

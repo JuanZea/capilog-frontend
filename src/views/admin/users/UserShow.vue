@@ -1,3 +1,21 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+import Fieldset from '../../../components/Fieldset.vue';
+import AuthLayout from '../../layouts/AuthLayout.vue';
+import { useRoute } from 'vue-router';
+import { userService } from '../../../services';
+
+const route = useRoute();
+const user = ref(null);
+const getUser = () => {
+	userService.show(route.params.dni).then((response) => {
+		user.value = response.user;
+	});
+};
+
+getUser();
+</script>
+
 <template>
 	<AuthLayout>
 		<div class="bg-aztec flex h-full w-full p-8">
@@ -41,28 +59,3 @@
 		</div>
 	</AuthLayout>
 </template>
-
-<script>
-import { ref } from 'vue';
-import Fieldset from '../../../components/Fieldset.vue';
-import AuthLayout from '../../layouts/AuthLayout.vue';
-import { useRoute } from 'vue-router';
-import { usersService } from '../../../api/services';
-
-export default {
-	components: { AuthLayout, Fieldset },
-	setup() {
-		const route = useRoute();
-		const user = ref(null);
-		const getUser = () => {
-			usersService.show(route.params.dni).then((response) => {
-				user.value = response.user;
-			});
-		};
-
-		getUser();
-
-		return { user };
-	},
-};
-</script>

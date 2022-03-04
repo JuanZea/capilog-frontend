@@ -3,13 +3,13 @@ import Avatar from '../../../Avatar.vue';
 import type { User } from '../../../../ts/types';
 import OptionsDropdown from './OptionsDropdown.vue';
 import { PencilAltIcon, TrashIcon, EyeIcon } from '@heroicons/vue/outline';
-import { usersService } from '../../../../api/services';
+import { userService } from '../../../../services';
 defineProps<{
 	user: User;
 }>();
 
 const destroy = (dni: string) => {
-	usersService.destroy(dni);
+	userService.destroy(dni);
 };
 </script>
 

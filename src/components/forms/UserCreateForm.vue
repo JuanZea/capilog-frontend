@@ -1,3 +1,19 @@
+<script lang="ts" setup>
+import { userService } from '../../services';
+import CInput from '../inputs/CInput.vue';
+const submit = (event) => {
+	event.preventDefault();
+	const form = document.getElementById('createUserForm');
+	const formData = new FormData(form);
+
+	for (var pair of formData.entries()) {
+		console.log(pair[0] + ', ' + pair[1]);
+	}
+
+	// usersService.create(data)
+};
+</script>
+
 <template>
 	<div>
 		<div class="md:grid md:grid-cols-2 md:gap-6">
@@ -61,26 +77,3 @@
 		</div>
 	</div>
 </template>
-
-<script>
-import { usersService } from '../../api/services';
-import CInput from '../inputs/CInput.vue';
-export default {
-	components: { CInput },
-	setup() {
-		const submit = (event) => {
-			event.preventDefault();
-			const form = document.getElementById('createUserForm');
-			const formData = new FormData(form);
-
-			for (var pair of formData.entries()) {
-				console.log(pair[0] + ', ' + pair[1]);
-			}
-
-			// usersService.create(data)
-		};
-
-		return { submit };
-	},
-};
-</script>

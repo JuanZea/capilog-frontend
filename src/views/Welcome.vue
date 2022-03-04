@@ -8,7 +8,7 @@ import { UserCircleIcon } from '@heroicons/vue/outline';
 	<GuestLayout>
 		<div class="relative flex h-full w-full flex-col items-center justify-center">
 			<div class="absolute top-4 right-4 flex justify-end gap-4 text-white">
-				<router-link class="button btn-primary flex items-center gap-2" to="/login">
+				<router-link class="btn btn-primary flex items-center gap-2" to="/login">
 					<UserCircleIcon class="h-6" />
 					Iniciar Sesión
 				</router-link>

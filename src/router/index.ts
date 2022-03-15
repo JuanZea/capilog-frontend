@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Error404 from '../views/errors/404.vue';
+
 import auth from './routes/auth';
 import guest from './routes/guest';
+import Error404 from '../views/errors/404.vue';
 
 export const routes = [
 	...guest,

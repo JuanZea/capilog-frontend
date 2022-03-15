@@ -1,24 +1,36 @@
+<script lang="ts" setup>
+import Alert from '../Alert.vue';
+defineProps<{
+	id?: string;
+	label?: string;
+	placeholder?: string;
+	type?: string;
+	modelValue?: string;
+	error?: string;
+}>();
+
+const emit = defineEmits(['update:modelValue']);
+
+const updateModelValue = (event: any) => {
+	emit('update:modelValue', event.target.value);
+};
+</script>
+
 <template>
 	<div>
-		<label v-if="label" for="email" class="mb-1 block font-medium text-gray-700">{{ label }}</label>
-		<div>
+		<label v-if="label" for="email" class="mb-1 block font-medium" :class="error ? 'text-red-700' : 'text-gray-700'">{{ label }}</label>
+		<div class="flex flex-col">
 			<input
 				:id="id"
-				:type="type"
-				class="block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+				:name="id"
+				:type="type ?? 'text'"
 				:placeholder="placeholder"
+				:value="modelValue"
+				@input="updateModelValue"
+				class="block w-full rounded-md shadow-sm sm:text-sm"
+				:class="error ? 'border-red-300 focus:border-red-500 focus:ring-red-500 bg-red-100' : 'border-gray-300 focus:border-gray-500 focus:ring-gray-500'"
 			/>
+			<Alert v-if="error" class="mt-1" :text="error" slim error/>
 		</div>
 	</div>
 </template>
-
-<script>
-export default {
-	props: {
-		id: { type: String, default: null },
-		label: { type: String, default: null },
-		placeholder: { type: String, default: null },
-		type: { type: String, default: 'text' },
-	},
-};
-</script>

@@ -32,7 +32,11 @@ const updateModelValue = (event: any) => {
 				:value="modelValue"
 				@change="updateModelValue"
 				class="block w-full rounded-md border bg-white py-2 px-3 shadow-sm focus:outline-none sm:text-sm"
-				:class="error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-gray-500 focus:ring-gray-500'"
+				:class="
+					error
+						? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+						: 'border-gray-300 focus:border-gray-500 focus:ring-gray-500'
+				"
 			>
 				<slot />
 			</select>

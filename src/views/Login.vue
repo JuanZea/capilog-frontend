@@ -44,7 +44,7 @@ const login = async (event: Event) => {
 	authService
 		.login(values)
 		.then(() => {
-			router.push({name: 'home'})
+			router.push({ name: 'home' });
 		})
 		.catch(() => {
 			invalidData.value = true;

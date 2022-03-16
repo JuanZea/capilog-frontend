@@ -4,8 +4,6 @@ defineProps<{
 	id?: string;
 	label?: string;
 	placeholder?: string;
-	type?: string;
-	modelValue?: string;
 	error?: string;
 }>();
 
@@ -26,13 +24,10 @@ const updateModelValue = (event: any) => {
 			>{{ label }}</label
 		>
 		<div class="flex flex-col">
-			<input
+			<textarea
 				:id="id"
 				:name="id"
-				:type="type ?? 'text'"
 				:placeholder="placeholder"
-				:value="modelValue"
-				@input="updateModelValue"
 				class="block w-full rounded-md shadow-sm sm:text-sm"
 				:class="
 					error

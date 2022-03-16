@@ -15,7 +15,7 @@
 }
 
 .btn-disabled {
-	@apply pointer-events-none opacity-50 select-none;
+	@apply pointer-events-none select-none opacity-50;
 }
 
 .btn-primary {

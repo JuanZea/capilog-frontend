@@ -7,7 +7,7 @@ const open = () => openModal(MODALS.TOPBAR);
 </script>
 
 <template>
-	<div class="flex min-h-screen min-w-screen flex-col bg-gray-200 lg:flex-row">
+	<div class="min-w-screen flex min-h-screen flex-col bg-gray-200 lg:flex-row">
 		<button @click="open" class="flex h-7 justify-center bg-gray-700 p-2 lg:hidden">
 			<div class="absolute rounded-full border-2 border-white bg-gray-700">
 				<ArrowSmDownIcon class="h-7 w-7 text-white" />

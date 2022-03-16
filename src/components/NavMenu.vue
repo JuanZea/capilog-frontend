@@ -10,10 +10,10 @@ import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon }
 				<router-link to="/home" class="mb-4 flex justify-center">
 					<CapilogTitle animated clear class="cursor-pointer text-3xl" />
 				</router-link>
-				<button class="sidebar-button">
+				<router-link :to="{ name: 'supervisor.request' }" class="sidebar-button">
 					<TruckIcon class="h-9 w-9 text-white lg:h-7 lg:w-7" />
 					Solicitar envío
-				</button>
+				</router-link>
 				<hr class="my-1 opacity-50" />
 				<button class="sidebar-button">
 					<InboxInIcon class="h-9 w-9 text-white lg:h-7 lg:w-7" />

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import Alert from '../Alert.vue';
 defineProps<{
 	id?: string;
 	label?: string;
 	type?: string;
+	modelValue?: string;
 	error?: string;
 }>();
 
@@ -23,7 +25,14 @@ const updateModelValue = (event: any) => {
 			>{{ label }}</label
 		>
 		<div class="flex flex-col">
-			<input :id="id" :name="id" :type="type ?? 'date'" class="block w-full rounded-md shadow-sm sm:text-sm" />
+			<input
+				:id="id"
+				:name="id"
+				:type="type ?? 'date'"
+				:value="modelValue"
+				@change="updateModelValue"
+				class="block w-full rounded-md shadow-sm sm:text-sm"
+			/>
 		</div>
 	</div>
 </template>

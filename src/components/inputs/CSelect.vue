@@ -40,7 +40,7 @@ const updateModelValue = (event: any) => {
 			>
 				<slot />
 			</select>
-			<Alert v-if="error" class="mt-1" :text="error" slim />
+			<Alert v-if="error" class="mt-1" :text="error" slim error />
 		</div>
 	</div>
 </template>

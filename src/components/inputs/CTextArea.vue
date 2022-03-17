@@ -4,6 +4,7 @@ defineProps<{
 	id?: string;
 	label?: string;
 	placeholder?: string;
+	modelValue?: string;
 	error?: string;
 }>();
 
@@ -28,6 +29,8 @@ const updateModelValue = (event: any) => {
 				:id="id"
 				:name="id"
 				:placeholder="placeholder"
+				:value="modelValue"
+				@change="updateModelValue"
 				class="block w-full rounded-md shadow-sm sm:text-sm"
 				:class="
 					error

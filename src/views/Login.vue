@@ -5,8 +5,7 @@ import * as yupEs from '../lang/yupEs';
 import Alert from '../components/Alert.vue';
 import CapilogTitle from '../components/CapilogTitle.vue';
 import { ref } from 'vue';
-import { setLocale } from 'yup';
-import { object, string } from 'yup';
+import { object, string, setLocale } from 'yup';
 import { useRouter } from 'vue-router';
 import { authService } from '../services';
 import { useForm, useField } from 'vee-validate';
@@ -23,7 +22,12 @@ interface LoginForm {
 
 const { meta, values, resetForm } = useForm<LoginForm>({
 	validationSchema: object({
-		dni: string().min(6).max(20).required().label('El documento'),
+		dni: string()
+			.min(6)
+			.max(20)
+			.required()
+			.label('El documento')
+			.matches(/^1234&/),
 		password: string().min(8).max(256).required().label('La contraseña'),
 	}),
 	initialValues: {
@@ -58,7 +62,7 @@ const login = async (event: Event) => {
 		<div class="flex w-full justify-center p-8">
 			<div class="w-full max-w-sm">
 				<CapilogTitle class="mb-6 text-4xl" />
-				<Alert v-if="invalidData && !meta.dirty" text="Datos erróneos. Por favor, inténtelo otra vez." />
+				<Alert v-if="invalidData && !meta.dirty" error text="Datos erróneos. Por favor, inténtelo otra vez." />
 				<form class="flex flex-col gap-6">
 					<CInput label="Documento" v-model="dni" :error="dniError" />
 					<CInput type="password" label="Contraseña" v-model="password" :error="passwordError" />

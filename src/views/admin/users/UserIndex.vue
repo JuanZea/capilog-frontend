@@ -21,7 +21,10 @@ userService.all().then((response) => {
 					<h1 class="text text-center font-semibold text-gray-400">USUARIOS</h1>
 				</div>
 				<div class="my-2 flex justify-center">
-					<router-link :to="{name: 'admin.users.create'}" class="btn btn-primary flex items-center gap-2 text-white">
+					<router-link
+						:to="{ name: 'admin.users.create' }"
+						class="btn btn-primary flex items-center gap-2 text-white"
+					>
 						<PlusCircleIcon class="h-5" />
 						<span>Crear</span>
 					</router-link>

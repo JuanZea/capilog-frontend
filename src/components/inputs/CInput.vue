@@ -18,7 +18,13 @@ const updateModelValue = (event: any) => {
 
 <template>
 	<div>
-		<label v-if="label" for="email" class="mb-1 block font-medium" :class="error ? 'text-red-700' : 'text-gray-700'">{{ label }}</label>
+		<label
+			v-if="label"
+			for="email"
+			class="mb-1 block font-medium"
+			:class="error ? 'text-red-700' : 'text-gray-700'"
+			>{{ label }}</label
+		>
 		<div class="flex flex-col">
 			<input
 				:id="id"
@@ -28,9 +34,13 @@ const updateModelValue = (event: any) => {
 				:value="modelValue"
 				@input="updateModelValue"
 				class="block w-full rounded-md shadow-sm sm:text-sm"
-				:class="error ? 'border-red-300 focus:border-red-500 focus:ring-red-500 bg-red-100' : 'border-gray-300 focus:border-gray-500 focus:ring-gray-500'"
+				:class="
+					error
+						? 'border-red-300 bg-red-100 focus:border-red-500 focus:ring-red-500'
+						: 'border-gray-300 focus:border-gray-500 focus:ring-gray-500'
+				"
 			/>
-			<Alert v-if="error" class="mt-1" :text="error" slim error/>
+			<Alert v-if="error" class="mt-1" :text="error" slim error />
 		</div>
 	</div>
 </template>

@@ -10,12 +10,11 @@ defineProps<{
 
 const destroy = (dni: string) => {
 	userService.destroy(dni);
-
 };
 </script>
 
 <template>
-	<div class="flex justify-between gap-6 rounded-xl bg-white px-3 py-1 lg:px-6 lg:py-3 shadow-md">
+	<div class="flex justify-between gap-6 rounded-xl bg-white px-3 py-1 shadow-md lg:px-6 lg:py-3">
 		<div class="flex items-center">
 			<Avatar :name="user.name + ' ' + user.lastname" class="h-14 w-14 text-xl" />
 			<div class="ml-3">

@@ -31,7 +31,7 @@ defineProps<{
 			>
 				<MenuItem>
 					<router-link
-						:to="{ name: 'admin.users.show', params: { dni: dni } }"
+						:to="{ name: 'users.show', params: { dni: dni } }"
 						class="flex justify-center text-gray-700 hover:text-gray-900"
 					>
 						<EyeIcon class="h-6 w-6" />

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import Banner from '../../../components/Banner.vue';
-import AuthLayout from '../../layouts/AuthLayout.vue';
-import UsersTable from '../../../components/tables/users/UsersTable.vue';
+import Banner from '../../components/Banner.vue';
+import AuthLayout from '../layouts/AuthLayout.vue';
+import UsersTable from '../../components/tables/users/UsersTable.vue';
 import { ref } from 'vue';
-import { userService } from '../../../services';
+import { userService } from '../../services';
 import { PlusCircleIcon } from '@heroicons/vue/outline';
 
 const users = ref(null);
 
 userService.all().then((response) => {
-	users.value = response.data.data[0].users;
+	users.value = response.data.items;
 });
 </script>
 
@@ -22,7 +22,7 @@ userService.all().then((response) => {
 				</div>
 				<div class="my-2 flex justify-center">
 					<router-link
-						:to="{ name: 'admin.users.create' }"
+						:to="{ name: 'users.create' }"
 						class="btn btn-primary flex items-center gap-2 text-white"
 					>
 						<PlusCircleIcon class="h-5" />

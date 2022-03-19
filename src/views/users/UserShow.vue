@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import Fieldset from '../../../components/Fieldset.vue';
-import AuthLayout from '../../layouts/AuthLayout.vue';
+import Fieldset from '../../components/Fieldset.vue';
+import AuthLayout from '../layouts/AuthLayout.vue';
 import { useRoute } from 'vue-router';
-import { userService } from '../../../services';
+import { userService } from '../../services';
 
 const route = useRoute();
 const user = ref(null);

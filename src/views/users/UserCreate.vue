@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import AuthLayout from '../../layouts/AuthLayout.vue';
-import UserCreateForm from '../../../components/forms/UserCreateForm.vue';
+import AuthLayout from '../layouts/AuthLayout.vue';
+import UserCreateForm from '../../components/forms/UserCreateForm.vue';
 </script>
 
 <template>

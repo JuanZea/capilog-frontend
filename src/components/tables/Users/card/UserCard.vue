@@ -31,7 +31,7 @@ const destroy = (dni: string) => {
 		</div>
 		<div class="hidden items-center gap-4 lg:flex">
 			<router-link
-				:to="{ name: 'admin.users.show', params: { dni: user.dni } }"
+				:to="{ name: 'users.show', params: { dni: user.dni } }"
 				class="flex justify-center text-gray-700 hover:text-gray-900"
 				><EyeIcon class="h-6 w-6"
 			/></router-link>

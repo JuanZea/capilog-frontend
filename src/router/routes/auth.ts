@@ -1,5 +1,5 @@
 import admin from './admin';
-import supervisor from './supervisor';
+import shipments from './shipments';
 
 import Home from '../../views/Home.vue';
 import MyProfile from '../../views/MyProfile.vue';
@@ -16,5 +16,5 @@ export default [
 		component: MyProfile,
 	},
 	...admin,
-	...supervisor,
+	...shipments,
 ];

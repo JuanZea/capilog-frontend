@@ -26,8 +26,7 @@ const { meta, values, resetForm } = useForm<LoginForm>({
 			.min(6)
 			.max(20)
 			.required()
-			.label('El documento')
-			.matches(/^1234&/),
+			.label('El documento'),
 		password: string().min(8).max(256).required().label('La contraseña'),
 	}),
 	initialValues: {

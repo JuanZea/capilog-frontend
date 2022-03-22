@@ -1,4 +1,4 @@
-import { initialized, state } from '../store';
+import { actions, initialized, state } from '../store';
 
 const isAuth = () => state.user;
 
@@ -14,5 +14,10 @@ export const auth = (to, from, next) => {
 
 export const guest = (to, from, next) => {
 	if (!isAuth()) next();
+	else next({ name: 'home' });
+};
+
+export const admin = (to, from, next) => {
+	if (actions.roles.isAdmin()) next();
 	else next({ name: 'home' });
 };

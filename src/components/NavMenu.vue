@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import CapilogTitle from './CapilogTitle.vue';
-import { TruckIcon, InboxInIcon, ClipboardListIcon, ArrowSmDownIcon, UsersIcon } from '@heroicons/vue/outline';
+import { TruckIcon, InboxInIcon, ClipboardListIcon, ClipboardIcon, GlobeIcon, ClipboardCheckIcon, UsersIcon } from '@heroicons/vue/outline';
 import { actions } from '../store';
 </script>
 
@@ -16,8 +16,22 @@ import { actions } from '../store';
 					<UsersIcon class="h-9 w-9 lg:h-7 lg:w-7" />
 					Usuarios
 				</router-link>
+				<router-link :to="{ name: 'routes.index' }" class="sidebar-button">
+					<GlobeIcon class="h-9 w-9 lg:h-7 lg:w-7" />
+					Rutas
+				</router-link>
+				<h2 class="text-left text-lg font-medium opacity-80 mt-4">Envíos y solicitudes</h2>
+				<router-link :to="{ name: 'request' }" class="sidebar-button">
+					<ClipboardIcon class="h-9 w-9 lg:h-7 lg:w-7" />
+					Solicitudes pendientes
+				</router-link>
+				<hr class="my-1 opacity-50" />
+				<router-link :to="{ name: 'request' }" class="sidebar-button">
+					<TruckIcon class="h-9 w-9 lg:h-7 lg:w-7" />
+					Solicitar envío
+				</router-link>
 			</section>
-			<section class="text-white">
+			<section v-if="actions.roles.isSupervisor()" class="text-white">
 				<h2 class="text-left text-lg font-medium opacity-80">Envíos y solicitudes</h2>
 				<router-link :to="{ name: 'request' }" class="sidebar-button">
 					<TruckIcon class="h-9 w-9 lg:h-7 lg:w-7" />
@@ -32,6 +46,13 @@ import { actions } from '../store';
 				<button class="sidebar-button">
 					<ClipboardListIcon class="h-9 w-9 lg:h-7 lg:w-7" />
 					Comprobar envíos
+				</button>
+			</section>
+			<section v-if="actions.roles.isDoorman()" class="text-white">
+				<h2 class="text-left text-lg font-medium opacity-80">Seguimiento</h2>
+				<button class="sidebar-button">
+					<ClipboardCheckIcon class="h-9 w-9 lg:h-7 lg:w-7" />
+					Gestión de envíos
 				</button>
 			</section>
 		</div>

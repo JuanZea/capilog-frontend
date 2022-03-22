@@ -15,10 +15,13 @@ export const actions = {
 	logout: () => {
 		authService.logout();
 		localStorage.clear();
+		state.user = null;
 		router.push({ name: 'login' });
 	},
 	roles: {
 		isAdmin: () => state.user?.role.role === 'ADMIN',
+		isSupervisor: () => state.user?.role.role === 'SUPERVISOR DE FINCA',
+		isDoorman: () => state.user?.role.role === 'PORTERO',
 	},
 };
 

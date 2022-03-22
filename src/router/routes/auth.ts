@@ -1,10 +1,10 @@
 import admin from './admin';
 import shipments from './shipments';
-
 import Home from '../../views/Home.vue';
 import MyProfile from '../../views/MyProfile.vue';
+import { auth } from '../middlewares';
 
-export default [
+const routes = [
 	{
 		name: 'home',
 		path: '/home',
@@ -18,3 +18,7 @@ export default [
 	...admin,
 	...shipments,
 ];
+
+export default routes.map((route) => {
+	return Object.assign(route, { beforeEnter: [auth] });
+});

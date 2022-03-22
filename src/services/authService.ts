@@ -7,7 +7,9 @@ export const authService = {
 			if (response.data.errors) return;
 			state.user = response.data.data.user;
 			updateToken(response.data.data.accessToken);
+			localStorage.setItem('userId', response.data.data.user.dni);
 			localStorage.setItem('authToken', response.data.data.accessToken);
 		}),
 	logout: () => service.post('auth/logout'),
+	refresh: () => service.get('auth/refresh'),
 };

@@ -22,11 +22,7 @@ interface LoginForm {
 
 const { meta, values, resetForm } = useForm<LoginForm>({
 	validationSchema: object({
-		dni: string()
-			.min(6)
-			.max(20)
-			.required()
-			.label('El documento'),
+		dni: string().min(6).max(20).required().label('El documento'),
 		password: string().min(8).max(256).required().label('La contraseña'),
 	}),
 	initialValues: {

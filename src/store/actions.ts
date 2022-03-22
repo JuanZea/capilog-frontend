@@ -17,6 +17,9 @@ export const actions = {
 		localStorage.clear();
 		router.push({ name: 'login' });
 	},
+	roles: {
+		isAdmin: () => state.user?.role.role === 'ADMIN',
+	},
 };
 
 const rememberAuth = async () => {

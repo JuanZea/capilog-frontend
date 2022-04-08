@@ -1,5 +1,6 @@
 import router from '../router';
 import { authService, userService } from '../services';
+import { AuthResponse } from '../services/adapters/adapters';
 import { updateToken } from '../services/instanceManager';
 import { state } from './state';
 
@@ -12,10 +13,17 @@ export const actions = {
 		initialize();
 		console.log('INI', state);
 	},
+	login: (credentials: AuthResponse) => {
+		state.user = credentials.user;
+		updateToken(credentials.accessToken);
+		localStorage.setItem('userId', credentials.user.dni);
+		localStorage.setItem('authToken', credentials.accessToken);
+		router.push({ name: 'home' });
+	},
 	logout: () => {
 		authService.logout();
 		localStorage.clear();
-		state.user = null;
+		delete state.user;
 		router.push({ name: 'login' });
 	},
 	roles: {

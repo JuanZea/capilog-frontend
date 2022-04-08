@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { state } from '../store';
 
-const URL = 'http://192.168.56.1:8000';
+const URL = 'http://localhost:8000';
 export const capilogApiInstance = axios.create({
 	baseURL: URL,
 	headers: { 'Content-Type': 'application/json' },

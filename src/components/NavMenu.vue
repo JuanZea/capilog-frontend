@@ -1,6 +1,14 @@
 <script lang="ts" setup>
 import CapilogTitle from './CapilogTitle.vue';
-import { TruckIcon, InboxInIcon, ClipboardListIcon, ClipboardIcon, GlobeIcon, ClipboardCheckIcon, UsersIcon } from '@heroicons/vue/outline';
+import {
+	TruckIcon,
+	InboxInIcon,
+	ClipboardListIcon,
+	ClipboardIcon,
+	GlobeIcon,
+	ClipboardCheckIcon,
+	UsersIcon,
+} from '@heroicons/vue/outline';
 import { actions } from '../store';
 </script>
 
@@ -20,7 +28,7 @@ import { actions } from '../store';
 					<GlobeIcon class="h-9 w-9 lg:h-7 lg:w-7" />
 					Rutas
 				</router-link>
-				<h2 class="text-left text-lg font-medium opacity-80 mt-4">Envíos y solicitudes</h2>
+				<h2 class="mt-4 text-left text-lg font-medium opacity-80">Envíos y solicitudes</h2>
 				<router-link :to="{ name: 'request' }" class="sidebar-button">
 					<ClipboardIcon class="h-9 w-9 lg:h-7 lg:w-7" />
 					Solicitudes pendientes

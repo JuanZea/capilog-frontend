@@ -28,6 +28,8 @@ const { errorMessage: nameError, value: name } = useField<string>('name');
 const { errorMessage: lastNameError, value: lastName } = useField<string>('lastName');
 const { errorMessage: emailError, value: email } = useField<string>('email');
 const { errorMessage: dniError, value: dni } = useField<string>('dni');
+const { errorMessage: roleError, value: role } = useField<string>('role');
+const { errorMessage: farmError, value: farm } = useField<string>('farm');
 const { errorMessage: phoneError, value: phone } = useField<string>('phone');
 const { errorMessage: passwordError, value: password } = useField<string>('password');
 const { errorMessage: passwordConfirmError, value: passwordConfirm } = useField<string>('passwordConfirm');
@@ -36,7 +38,6 @@ const onSubmit = handleSubmit((values) => {
 	console.log(values);
 	const modValues = values;
 	modValues.lastname = modValues.lastName;
-	modValues.role = 'PORTERO';
 	delete modValues.passwordConfirm;
 	delete modValues.lastName;
 	userService.create(modValues).then(() => {
@@ -77,15 +78,21 @@ const onSubmit = handleSubmit((values) => {
 						<CInput id="phone" label="Telefono" v-model="phone" :error="phoneError" />
 					</div>
 					<div class="col-span-6 sm:col-span-3">
-						<CSelect id="farm" label="Finca">
-							<option value="CC">Bochica</option>
+						<CSelect id="farm" label="Finca" v-model="farm" :error="farmError">
+							<option value="ALHAMBRA">Alhambra</option>
+							<option value="BOUQUETERA">Bouquetera</option>
+							<option value="BOCHICA">Bochica</option>
+							<option value="LA CEJA">La ceja</option>
+							<option value="PADUA">Padua</option>
+							<option value="SAN SEBASTIÁN">San Sebastían</option>
+							<option value="VALLEY">Valley</option>
 						</CSelect>
 					</div>
 					<div class="col-span-6 sm:col-span-3">
-						<CSelect id="role" label="Rol">
-							<option>Coordinador de transporte</option>
-							<option>Supervisor de finca</option>
-							<option>Portero</option>
+						<CSelect id="role" label="Rol" v-model="role" :error="roleError">
+							<option value="ADMIN">Coordinador de transporte</option>
+							<option value="COORDINADOR DE FINCA">Supervisor de finca</option>
+							<option value="PORTERO">Portero</option>
 						</CSelect>
 					</div>
 

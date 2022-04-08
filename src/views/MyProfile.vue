@@ -21,7 +21,7 @@
 									<span>{{ user.email }}</span>
 								</div>
 								<div>
-									<span>{{ user.farm ?? 'Desconocida' }}</span>
+									<span>{{ user.farm.farm ?? 'Desconocida' }}</span>
 								</div>
 								<div>
 									<span>{{ user.role.role }}</span>

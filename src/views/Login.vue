@@ -42,9 +42,7 @@ const login = async (event: Event) => {
 
 	authService
 		.login(values)
-		.then(() => {
-			router.push({ name: 'home' });
-		})
+		.then(() => router.push({ name: 'home' }))
 		.catch(() => {
 			invalidData.value = true;
 			resetForm();

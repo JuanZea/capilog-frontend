@@ -20,7 +20,7 @@ export const actions = {
 	},
 	roles: {
 		isAdmin: () => state.user?.role.role === 'ADMIN',
-		isSupervisor: () => state.user?.role.role === 'SUPERVISOR DE FINCA',
+		isSupervisor: () => state.user?.role.role === 'COORDINADOR DE FINCA',
 		isDoorman: () => state.user?.role.role === 'PORTERO',
 	},
 };

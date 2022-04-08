@@ -1,15 +1,9 @@
 import { state } from '../store';
+import { getAuthFromLoginResponse } from './adapters/auth';
 import { capilogApiInstance as service, updateToken } from './instanceManager';
 
 export const authService = {
-	login: (data: { dni: string; password: string }) =>
-		service.post('auth/login', data).then((response) => {
-			if (response.data.errors) return;
-			state.user = response.data.data.user;
-			updateToken(response.data.data.accessToken);
-			localStorage.setItem('userId', response.data.data.user.dni);
-			localStorage.setItem('authToken', response.data.data.accessToken);
-		}),
+	login: (data: { dni: string; password: string }) => service.post('auth/login', data).then(getAuthFromLoginResponse),
 	logout: () => service.post('auth/logout'),
 	refresh: () => service.get('auth/refresh'),
 };

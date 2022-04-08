@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import * as yupEs from '../../lang/yupEs';
-import CSelect from '../inputs/CSelect.vue';
-import CDateTimePicker from '../inputs/CDateTimePicker.vue';
-import CTextArea from '../inputs/CTextArea.vue';
-import { ArrowCircleRightIcon } from '@heroicons/vue/outline';
-import { useField, useForm } from 'vee-validate';
-import { setLocale, object, string, date } from 'yup';
-import { ref } from 'vue';
 import Alert from '../Alert.vue';
+import CInput from '../inputs/CInput.vue';
+import CSelect from '../inputs/CSelect.vue';
+import CTextArea from '../inputs/CTextArea.vue';
+import { ref } from 'vue';
+import { useField, useForm } from 'vee-validate';
+import { ArrowCircleRightIcon } from '@heroicons/vue/outline';
+import { setLocale, object, string, date as dateRule } from 'yup';
 
 setLocale(yupEs);
 const created = ref(false);
@@ -16,25 +16,20 @@ const { meta, values, resetForm, handleSubmit } = useForm<any>({
 	validationSchema: object({
 		startSite: string().required().label('El lugar de recogida'),
 		endSite: string().required().label('El lugar de entrega'),
-		startDate: date().label('La fecha de recogida'),
-		endDate: date().label('La fecha de recogida'),
-		startTime: string().label('La hora de recogida'),
-		endTime: string().label('La hora de entrega'),
+		date: dateRule().label('La fecha de recogida'),
+		time: string().label('La hora de recogida'),
 		description: string().max(256).required().label('La descripción'),
 	}),
 });
 
 const { errorMessage: startSiteError, value: startSite } = useField<string>('startSite');
 const { errorMessage: endSiteError, value: endSite } = useField<string>('endSite');
-const { errorMessage: startDateError, value: startDate } = useField<string>('startDate');
-const { errorMessage: endDateError, value: endDate } = useField<string>('endDate');
-const { errorMessage: startTimeError, value: startTime } = useField<string>('startTime');
-const { errorMessage: endTimeError, value: endTime } = useField<string>('endTime');
+const { errorMessage: dateError, value: date } = useField<string>('date');
+const { errorMessage: timeError, value: time } = useField<string>('time');
 const { errorMessage: descriptionError, value: description } = useField<string>('description');
 
 const onSubmit = handleSubmit((values) => {
 	console.log(values);
-	console.log(values.startTime);
 	created.value = true;
 });
 </script>
@@ -54,22 +49,16 @@ const onSubmit = handleSubmit((values) => {
 						</CSelect>
 					</div>
 					<div class="col-span-7 sm:col-span-2">
-						<CDateTimePicker
+						<CInput
 							id="startDate"
 							label="Fecha de recogida"
-							:error="startDateError"
+							:error="dateError"
 							type="date"
-							v-model="startDate"
+							v-model="date"
 						/>
 					</div>
 					<div class="col-span-7 sm:col-span-2">
-						<CDateTimePicker
-							id="startTime"
-							label="Hora de recogida"
-							:error="startTimeError"
-							type="time"
-							v-model="startTime"
-						/>
+						<CInput id="startTime" label="Hora de recogida" :error="timeError" type="time" v-model="time" />
 					</div>
 					<div class="col-span-7 sm:col-span-3">
 						<CSelect id="endSite" label="Lugar de Entrega" :error="endSiteError" v-model="endSite">
@@ -80,25 +69,7 @@ const onSubmit = handleSubmit((values) => {
 							<option>Jose María Cordoba (Aeropuerto)</option>
 						</CSelect>
 					</div>
-					<div class="col-span-7 sm:col-span-2">
-						<CDateTimePicker
-							id="endDate"
-							label="Fecha de entrega"
-							:error="endDateError"
-							type="date"
-							v-model="endDate"
-						/>
-					</div>
-					<div class="col-span-7 sm:col-span-2">
-						<CDateTimePicker
-							id="endTime"
-							label="Hora de entrega"
-							type="time"
-							:error="endTimeError"
-							v-model="endTime"
-						/>
-					</div>
-					<div class="col-span-7">
+					<div class="col-span-7 sm:col-span-4">
 						<CTextArea
 							id="description"
 							label="Descripcion del envio y la carga"

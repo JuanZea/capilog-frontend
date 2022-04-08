@@ -25,7 +25,7 @@ const destroy = (dni: string) => {
 					{{ user.role.role }}
 				</div>
 				<div class="mt-1 text-sm text-gray-500">
-					<span class="rounded bg-red-200 px-2 py-1 text-red-600">Bochica</span>
+					<span class="rounded bg-gray-200 px-2 py-1 text-gray-600">{{ user.farm.farm }}</span>
 				</div>
 			</div>
 		</div>

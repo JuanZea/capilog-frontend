@@ -1,1 +1,7 @@
-export declare type User = { dni: string; name: string; lastname?: string; role: { role: string } };
+export declare type User = {
+	dni: string;
+	name: string;
+	lastname?: string;
+	role: { role: string };
+	farm: { farm: string };
+};

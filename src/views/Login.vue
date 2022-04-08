@@ -28,11 +28,15 @@ const { errorMessage: dniError, value: dni } = useField<string>('dni');
 const { errorMessage: passwordError, value: password } = useField<string>('password');
 
 const invalidData = ref(false);
+const handleLoginError = () => {
+	invalidData.value = true;
+	resetForm();
+};
 
 const login = async (event: Event) => {
 	event.preventDefault();
 	if (!meta.value.valid) return;
-	actions.login(await authService.login(values))
+	authService.login(values).then(actions.login).catch(handleLoginError);
 };
 </script>
 

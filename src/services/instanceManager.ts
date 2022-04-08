@@ -9,6 +9,7 @@ export const capilogApiInstance = axios.create({
 
 capilogApiInstance.interceptors.response.use(undefined, (error) => {
 	if (!error.response) state.errors.server = true;
+	return Promise.reject(error);
 });
 
 export const updateToken = (token: string) =>

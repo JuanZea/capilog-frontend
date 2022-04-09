@@ -1,5 +1,5 @@
 import router from '../router';
-import { authService, userService } from '../services';
+import { authService, farmService, userService } from '../services';
 import { AuthResponse } from '../services/adapters/adapters';
 import { updateToken } from '../services/instanceManager';
 import { state } from './state';
@@ -10,6 +10,7 @@ export const initialized = new Promise((resolve) => (initialize = () => resolve(
 export const actions = {
 	initialize: async () => {
 		await rememberAuth();
+		await loadFarms();
 		initialize();
 		console.log('INI', state);
 	},
@@ -32,6 +33,14 @@ export const actions = {
 		isDoorman: () => state.user?.role.role === 'PORTERO',
 	},
 };
+
+const loadFarms = async () => {
+	try {
+		state.farms = await farmService.all();
+	} catch {
+		console.error('FARMS ERROR')
+	}
+}
 
 const rememberAuth = async () => {
 	const token = localStorage.getItem('authToken');

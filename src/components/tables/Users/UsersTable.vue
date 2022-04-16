@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { User } from '@/types/models';
+import UserCard from './card/UserCard.vue';
+
+defineProps<{
+	users: Array<User>;
+}>();
+</script>
+
 <template>
 	<div class="flex flex-col">
 		<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -9,12 +18,3 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-import UserCard from './card/UserCard.vue';
-import type { User } from '../../../ts/types';
-
-defineProps<{
-	users: Array<User>;
-}>();
-</script>

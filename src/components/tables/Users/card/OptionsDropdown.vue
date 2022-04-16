@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { userService } from '@/services';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import { PencilAltIcon, TrashIcon, EyeIcon } from '@heroicons/vue/outline';
 import { DotsVerticalIcon } from '@heroicons/vue/outline';
@@ -6,6 +7,11 @@ import { DotsVerticalIcon } from '@heroicons/vue/outline';
 defineProps<{
 	dni: string;
 }>();
+
+const destroy = (dni: string) => {
+	userService.destroy(dni);
+	window.location.reload();
+};
 </script>
 
 <template>
@@ -37,11 +43,11 @@ defineProps<{
 						<EyeIcon class="h-6 w-6" />
 					</router-link>
 				</MenuItem>
-				<MenuItem>
+				<!-- <MenuItem>
 					<a href="#" class="flex justify-center text-indigo-700 hover:text-indigo-900"
 						><PencilAltIcon class="h-6 w-6"
 					/></a>
-				</MenuItem>
+				</MenuItem> -->
 				<MenuItem>
 					<button @click="destroy(dni)" class="text-red-700 hover:text-red-900">
 						<TrashIcon class="h-6 w-6" />

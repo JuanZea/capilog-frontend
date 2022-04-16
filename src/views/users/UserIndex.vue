@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import Banner from '../../components/Banner.vue';
+import Banner from '@/components/Banner.vue';
 import AuthLayout from '../layouts/AuthLayout.vue';
-import UsersTable from '../../components/tables/users/UsersTable.vue';
+import UsersTable from '@/components/tables/users/UsersTable.vue';
 import { ref } from 'vue';
-import { userService } from '../../services';
+import { userService } from '@/services';
 import { PlusCircleIcon } from '@heroicons/vue/outline';
 
 const users = ref(null);

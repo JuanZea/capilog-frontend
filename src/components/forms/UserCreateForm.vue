@@ -12,7 +12,7 @@ import Alert from '../Alert.vue';
 setLocale(yupEs);
 const created = ref(false);
 
-const { meta, values, resetForm, handleSubmit } = useForm<any>({
+const { resetForm, handleSubmit } = useForm<any>({
 	validationSchema: object({
 		name: string().min(2).max(20).required().label('El nombre'),
 		lastName: string().min(2).max(20).required().label('El apellido'),
@@ -35,7 +35,6 @@ const { errorMessage: passwordError, value: password } = useField<string>('passw
 const { errorMessage: passwordConfirmError, value: passwordConfirm } = useField<string>('passwordConfirm');
 
 const onSubmit = handleSubmit((values) => {
-	console.log(values);
 	const modValues = values;
 	modValues.lastname = modValues.lastName;
 	delete modValues.passwordConfirm;

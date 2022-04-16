@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import Avatar from '../../../Avatar.vue';
-import type { User } from '../../../../ts/types';
+import Avatar from '@/components/Avatar.vue';
+import { User } from '@/types/models';
 import OptionsDropdown from './OptionsDropdown.vue';
 import { PencilAltIcon, TrashIcon, EyeIcon } from '@heroicons/vue/outline';
-import { userService } from '../../../../services';
+import { userService } from '@/services';
+import { capitalize } from 'lodash';
 defineProps<{
 	user: User;
 }>();
 
 const destroy = (dni: string) => {
 	userService.destroy(dni);
+	window.location.reload();
 };
 </script>
 
@@ -22,7 +24,7 @@ const destroy = (dni: string) => {
 					{{ `${user.name} ${user.lastname ?? ''}` }}
 				</div>
 				<div class="w-40 truncate whitespace-nowrap text-sm text-gray-500">
-					{{ user.role.role }}
+					{{ capitalize(user.role.role) }}
 				</div>
 				<div class="mt-1 text-sm text-gray-500">
 					<span class="rounded bg-gray-200 px-2 py-1 text-gray-600">{{ user.farm.farm }}</span>
@@ -35,9 +37,9 @@ const destroy = (dni: string) => {
 				class="flex justify-center text-gray-700 hover:text-gray-900"
 				><EyeIcon class="h-6 w-6"
 			/></router-link>
-			<a href="#" class="flex justify-center text-indigo-700 hover:text-indigo-900"
+			<!-- <a href="#" class="flex justify-center text-indigo-700 hover:text-indigo-900"
 				><PencilAltIcon class="h-6 w-6"
-			/></a>
+			/></a> -->
 			<button @click="destroy(user.dni)" class="text-red-700 hover:text-red-900">
 				<TrashIcon class="h-6 w-6" />
 			</button>

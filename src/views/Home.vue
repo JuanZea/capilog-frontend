@@ -4,7 +4,7 @@ import AuthLayout from './layouts/AuthLayout.vue';
 
 <template>
 	<AuthLayout>
-		<div class="bg-aztec flex w-full p-8">
+		<div class="bg-aztec flex w-full py-8">
 			<div class="w-full bg-gray-200"></div>
 		</div>
 	</AuthLayout>

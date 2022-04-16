@@ -10,6 +10,7 @@ import { ArrowCircleRightIcon } from '@heroicons/vue/outline';
 import { setLocale, object, string, date as dateRule } from 'yup';
 import { state } from '../../store';
 import { format } from 'date-fns';
+import { STATE } from '../../constants'
 
 setLocale(yupEs);
 const created = ref(false);
@@ -37,7 +38,15 @@ const { errorMessage: timeError, value: time } = useField<string>('time');
 const { errorMessage: descriptionError, value: description } = useField<string>('description');
 
 const onSubmit = handleSubmit((values) => {
-	console.log(values);
+	const body = {
+		firstFarm: values.startSite,
+		lastFarm: values.startSite,
+		startDate: `${values.date} ${values.time}`,
+		description: values.description,
+		state: STATE.REQUESTED,
+		typeOrder: 'Finca a Finca',
+	};
+	console.log(body);
 	created.value = true;
 });
 </script>

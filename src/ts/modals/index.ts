@@ -1,8 +1,8 @@
-import { ref } from 'vue';
+import { shallowRef } from 'vue';
 
-export const currentModal = ref();
+export const currentModal = shallowRef();
 
-export const openModal = (modal: string) => {
+export const openModal = (modal: any) => {
 	window.addEventListener('resize', closeModal);
 	currentModal.value = modal;
 };

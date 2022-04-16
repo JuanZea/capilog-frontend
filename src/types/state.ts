@@ -1,4 +1,4 @@
-import { Farm, User } from "../types";
+import { User, Farm } from "@/types/models";
 
 export declare type State = {
 	user?: User;

@@ -10,9 +10,8 @@ export const initialized = new Promise((resolve) => (initialize = () => resolve(
 export const actions = {
 	initialize: async () => {
 		await rememberAuth();
-		await loadFarms();
 		initialize();
-		console.log('INI', state);
+		console.log('[capilog]: initialized');
 	},
 	login: (credentials: AuthResponse) => {
 		state.user = credentials.user;
@@ -29,18 +28,17 @@ export const actions = {
 	},
 	roles: {
 		isAdmin: () => state.user?.role.role === 'ADMIN',
-		isSupervisor: () => state.user?.role.role === 'COORDINADOR DE FINCA',
+		isCoordinator: () => state.user?.role.role === 'COORDINADOR DE TRANSPORTE',
+		isSupervisor: () => state.user?.role.role === 'SUPERVISOR DE FINCA',
 		isDoorman: () => state.user?.role.role === 'PORTERO',
 	},
 };
 
 const loadFarms = async () => {
-	try {
-		state.farms = await farmService.all();
-	} catch {
-		console.error('FARMS ERROR')
-	}
-}
+	const response = await farmService.all();
+	if (response.isAxiosError) console.error("[ERROR] Can't load farms");
+	else state.farms = response;
+};
 
 const rememberAuth = async () => {
 	const token = localStorage.getItem('authToken');

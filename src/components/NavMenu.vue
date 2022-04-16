@@ -10,6 +10,8 @@ import {
 	UsersIcon,
 } from '@heroicons/vue/outline';
 import { actions } from '../store';
+import { state } from '../store/state';
+import { capitalize } from 'lodash';
 </script>
 
 <template>
@@ -64,9 +66,13 @@ import { actions } from '../store';
 				</button>
 			</section>
 		</div>
-		<div class="flex flex-col items-center gap-4 text-xl font-medium text-white underline lg:gap-2 lg:text-base">
-			<router-link class="opacity-75 hover:opacity-100" to="/my-profile">Mi perfil</router-link>
-			<button class="opacity-75 hover:opacity-100" @click="actions.logout">Cerrar sesión</button>
+		<div class="flex flex-col items-center gap-4 text-xl font-medium text-white lg:gap-2 lg:text-base">
+			<router-link class="flex flex-col items-center opacity-75 hover:opacity-100" to="/my-profile">
+				<span>Mi perfil</span>
+				<span v-if="state.user.role.role === 'ADMIN'">(Administrador)</span>
+				<span v-else>{{ `(${capitalize(state.user.role.role)})` }}</span>
+			</router-link>
+			<button class="underline opacity-75 hover:opacity-100" @click="actions.logout">Cerrar sesión</button>
 		</div>
 	</div>
 </template>
